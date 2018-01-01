@@ -1,5 +1,5 @@
 ﻿
-body {
+/*body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
@@ -7,7 +7,7 @@ input, textarea {
     font-size: 18px;
     width: 200px
 }
-
+    
 input[type=submit] {
     width: auto;
 }
@@ -81,4 +81,4 @@ menu li::after {
 
 menu li:last-of-type::after {
     content: "";    
-}
+}*/

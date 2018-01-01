@@ -2,36 +2,52 @@
 <html>
 <head>
     <title>Dutch Treat: @ViewBag.Title</title>
-    <link href="~/css/site.css" rel="stylesheet" />
+<!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="lib/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="lib/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        
+    <link href="css/site.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <h1>Welcome to Dutch Treat</h1>
-            <menu>
-                <ul>
-                    <li><a asp-controller="App" asp-action="Index">Home</a></li>
-                    <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
-                    <li><a asp-controller="App" asp-action="About">About</a></li>
-                </ul>
-            </menu>
-    </header>
-    <section>
-        <h2>@ViewBag.Title</h2>
+    <div class="navbar navbar-inverse">
+        <header class="container">
+            <div class="navbar-header">
+                <div class="navbar-brand"><i class="fa fa-paint-brush"></i>Dutch Treat</div>
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#menu">&#9776;</button>
+            </div>
+                <div id="menu" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-controller="App" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
+                        <li><a asp-controller="App" asp-action="About">About</a></li>
+                    </ul>
+                </div>
+        </header>
+    </div>
+    <section class="container">
+        <h2 class="text-center">@ViewBag.Title</h2>
         @RenderBody()
     </section>
-    <footer>Copyright 2017 Dutch Treat LLC</footer>
+    <footer class="container">
+        <div class="text-center">Copyright 2017 Dutch Treat LLC
+        </div>
+    </footer>
         
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>-->
+    <script src="lib/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
     <script src="js/index.js"></script>
     @RenderSection("scripts", false)
 
 </body>
 </html>
+
