@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DutchTreat.Data;
 using DutchTreat.Services;
 using DutchTreat.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +14,12 @@ namespace DutchTreat.Controllers
     public class AppController : Controller
     {
         private readonly IMailService mailService;
+        private readonly IDutchRepository repository;
 
-        public AppController(IMailService mailService)
+        public AppController(IMailService mailService, IDutchRepository repository)
         {
             this.mailService = mailService;
+            this.repository = repository;
         }
 
         public IActionResult Index()
@@ -53,6 +56,17 @@ namespace DutchTreat.Controllers
         {
             ViewBag.Title = "About Us";
             return View();
+        }
+
+        public IActionResult Shop()
+        {
+            //var results = this._context.Products
+            //.OrderBy(p => p.Category)
+            //.ToList(); // can also do link query, shown in video 'using dbcontext' @minute 1:52
+
+            var results = repository.GetAllProducts();
+
+            return View(results);
         }
     }
 }
