@@ -10,5 +10,10 @@
       "Default": "Information",
       "Microsoft": "Warning"      
     }
+  },
+  "Tokens":  {
+    "Key": "askdljfa klwej flkasjf klasjvlk",
+    "Issuer": "local", // is it local?
+    "Audience": "users"
   }
 }

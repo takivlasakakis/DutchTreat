@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 namespace DutchTreat.ViewModels
 {
     public class OrderViewModel
@@ -11,5 +12,6 @@ namespace DutchTreat.ViewModels
         [MinLength(4)]
         public string OrderNumber { get; set; }
 
+        public ICollection<OrderItemViewModel> Items { get; set; }
     }
 }

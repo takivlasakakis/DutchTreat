@@ -12,25 +12,40 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using AutoMapper;
+using DutchTreat.Data.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DutchTreat
 {
     public class Startup
     {
-        private readonly IConfiguration config;
+        private readonly IConfiguration _config;
+        private readonly IHostingEnvironment _env;
 
-        public Startup(IConfiguration config)
+        public Startup(IConfiguration config, IHostingEnvironment env)
         {
-            this.config = config;
+            this._config = config;
+            this._env = env;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<StoreUser, IdentityRole>(cfg =>
+            {
+                cfg.User.RequireUniqueEmail = true;
+            })
+              .AddEntityFrameworkStores<DutchContext>();
+
+            services.AddAuthentication()
+                    .AddCookie()
+                    .AddJwtBearer();
+
             services.AddDbContext<DutchContext>(cfg =>
             {
-                cfg.UseSqlServer(config.GetConnectionString("DutchConnectionString"));
+                cfg.UseSqlServer(_config.GetConnectionString("DutchConnectionString"));
             });
 
             services.AddAutoMapper();
@@ -40,7 +55,13 @@ namespace DutchTreat
 
             services.AddScoped<IDutchRepository, DutchRepository>();
 
-            services.AddMvc()
+            services.AddMvc(opt =>
+            {
+                if (_env.IsProduction())
+                {
+                    opt.Filters.Add(new RequireHttpsAttribute());
+                }
+            })
                     .AddJsonOptions(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
         }
 
@@ -58,6 +79,8 @@ namespace DutchTreat
 
             app.UseStaticFiles();
 
+            app.UseAuthentication();
+
             app.UseMvc(cfg =>
             {
                 cfg.MapRoute("Default",
@@ -71,7 +94,7 @@ namespace DutchTreat
                 using (var scope = app.ApplicationServices.CreateScope())
                 {
                     var seeder = scope.ServiceProvider.GetService<DutchSeeder>();
-                    seeder.Seed();
+                    seeder.Seed().Wait();
                 }
             }
                 

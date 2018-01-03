@@ -19,6 +19,7 @@
     <Folder Include="wwwroot\lib\" />
     <Folder Include="Data\" />
     <Folder Include="Data\Entities\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
 
   <ItemGroup>
