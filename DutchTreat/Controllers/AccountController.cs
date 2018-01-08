@@ -100,7 +100,7 @@ namespace DutchTreat.Controllers
                         new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName)
                         };
 
-                        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens.Key"]));
+                        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
                         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
                         var token = new JwtSecurityToken(

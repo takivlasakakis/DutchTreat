@@ -3,7 +3,7 @@
     "Favorite": "blue"
   },
   "ConnectionStrings":  {
-    "DutchConnectionString": "server=(local);Database=DutchTreatDb;User Id=sa;Password=XXXXXXXXXXX;MultipleActiveResultSets=true;"
+    "DutchConnectionString": "server=(local);Database=DutchTreatDb;User Id=sa;Password=Teeb15mc;MultipleActiveResultSets=true;"
   },
   "Logging":  {
     "LogLevel":  {
@@ -12,8 +12,8 @@
     }
   },
   "Tokens":  {
-    "Key": "askdljfa klwej flkasjf klasjvlk",
-    "Issuer": "local", // is it local?
+    "Key": "jdfask hdjklsa ghskdj haklsd",
+    "Issuer": "local", // is it localhost?
     "Audience": "users"
   }
 }

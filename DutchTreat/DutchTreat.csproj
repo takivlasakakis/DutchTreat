@@ -20,6 +20,8 @@
     <Folder Include="Data\" />
     <Folder Include="Data\Entities\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="wwwroot\ts\" />
+    <Folder Include="ClientApp\app\shop\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,8 +38,84 @@
   <ItemGroup>
     <Content Remove="Views\Shared\_Layout.cshtml" />
     <Content Remove="wwwroot\css\site.css" />
+    <Content Remove="wwwroot\ts\main.ts" />
+    <Content Remove="wwwroot\ts\main.ts" />
+    <Content Remove="wwwroot\ts\storecustomer.ts" />
+    <Content Remove="typings\globals\node\typings.json" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="wwwroot\css\site.css" />
+    <None Remove="wwwroot\ts\storecustomer.ts" />
+    <None Remove="typings\index.d.ts" />
+    <None Remove="typings\globals\node\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pages\src\index.html" />
+    <None Include="Pages\src\main.ts" />
+    <None Include="Pages\src\polyfills.ts" />
+    <None Include="Pages\src\styles.css" />
+    <None Include="Pages\src\tsconfig.app.json" />
+    <None Include="Pages\src\typings.d.ts" />
+    <None Include="Pages\src\app\app.component.ts" />
+    <None Include="Pages\src\app\app.module.ts" />
+    <None Include="Pages\src\assets\.gitkeep" />
+    <None Include="Pages\src\environments\environment.prod.ts" />
+    <None Include="Pages\src\environments\environment.ts" />
+    <None Include=".bin\acorn" />
+    <None Include=".bin\ansi-html" />
+    <None Include=".bin\babylon" />
+    <None Include=".bin\browserslist" />
+    <None Include=".bin\build-optimizer" />
+    <None Include=".bin\cssesc" />
+    <None Include=".bin\csso" />
+    <None Include=".bin\errno" />
+    <None Include=".bin\esparse" />
+    <None Include=".bin\esvalidate" />
+    <None Include=".bin\he" />
+    <None Include=".bin\html-minifier" />
+    <None Include=".bin\image-size" />
+    <None Include=".bin\import-local-fixture" />
+    <None Include=".bin\in-install" />
+    <None Include=".bin\in-publish" />
+    <None Include=".bin\internal-ip" />
+    <None Include=".bin\js-yaml" />
+    <None Include=".bin\jsesc" />
+    <None Include=".bin\json5" />
+    <None Include=".bin\lessc" />
+    <None Include=".bin\loose-envify" />
+    <None Include=".bin\miller-rabin" />
+    <None Include=".bin\mime" />
+    <None Include=".bin\mkdirp" />
+    <None Include=".bin\multicast-dns" />
+    <None Include=".bin\ng" />
+    <None Include=".bin\ng-xi18n" />
+    <None Include=".bin\ngc" />
+    <None Include=".bin\node-gyp" />
+    <None Include=".bin\node-sass" />
+    <None Include=".bin\nopt" />
+    <None Include=".bin\not-in-install" />
+    <None Include=".bin\not-in-publish" />
+    <None Include=".bin\purify" />
+    <None Include=".bin\regjsparser" />
+    <None Include=".bin\rimraf" />
+    <None Include=".bin\sassgraph" />
+    <None Include=".bin\schematics" />
+    <None Include=".bin\semver" />
+    <None Include=".bin\sha.js" />
+    <None Include=".bin\sshpk-conv" />
+    <None Include=".bin\sshpk-sign" />
+    <None Include=".bin\sshpk-verify" />
+    <None Include=".bin\strip-indent" />
+    <None Include=".bin\stylus" />
+    <None Include=".bin\svgo" />
+    <None Include=".bin\tree-kill" />
+    <None Include=".bin\tsc" />
+    <None Include=".bin\tsickle" />
+    <None Include=".bin\tsserver" />
+    <None Include=".bin\uglifyjs" />
+    <None Include=".bin\uuid" />
+    <None Include=".bin\webpack" />
+    <None Include=".bin\webpack-dev-server" />
+    <None Include=".bin\which" />
   </ItemGroup>
 </Project>

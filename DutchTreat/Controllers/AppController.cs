@@ -66,9 +66,7 @@ namespace DutchTreat.Controllers
             //.OrderBy(p => p.Category)
             //.ToList(); // can also do link query, shown in video 'using dbcontext' @minute 1:52
 
-            var results = repository.GetAllProducts();
-
-            return View(results);
+            return View();
         }
     }
 }
