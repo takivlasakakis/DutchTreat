@@ -121,4 +121,11 @@
     <None Include=".bin\webpack-dev-server" />
     <None Include=".bin\which" />
   </ItemGroup>
+
+    <Target Name="MyPublishScripts" BeforeTargets="BeforePublish">
+        <Exec Command="npm install" />
+        <Exec Command="bower install" />
+        <Exec Command="gulp" />
+        <Exec Command="ng build" />
+    </Target>
 </Project>

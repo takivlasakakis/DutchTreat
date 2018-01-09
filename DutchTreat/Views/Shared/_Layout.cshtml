@@ -2,12 +2,20 @@
 <html>
 <head>
     <title>Dutch Treat: @ViewBag.Title</title>
-<!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>-->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link href="/lib/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/lib/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-        
-    <link href="css/site.css" rel="stylesheet" />
+    <environment names="Development">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
+        <link href="/lib/bootstrap-3.3.7/dist/css/bootstrap.css" rel="stylesheet" />
+        <link href="/lib/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+        <link href="css/site.css" rel="stylesheet" />
+    </environment>
+        <environment names="Staging,Production">
+        <!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>-->
+            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+            <link href="/lib/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+            <link href="/lib/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+                
+            <link href="css/site.css" rel="stylesheet" />
+     </environment>
 </head>
 <body>
     <div class="navbar navbar-inverse">
@@ -43,18 +51,28 @@
         </div>
     </footer>
         
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
-<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
-            crossorigin="anonymous"></script>-->
-    <script src="lib/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
-    <script src="js/index.js"></script>
+    <environment names="Development">
+        <script src="https://code.jquery.com/jquery-3.2.1.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>
+    <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+                crossorigin="anonymous"></script>-->
+        <script src="lib/bootstrap-3.3.7/dist/js/bootstrap.js"></script>    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+        <script src="js/index.js"></script>
+    </environment>
+    <environment names="Staging, Production">
+        <script src="https://code.jquery.com/jquery-3.2.1.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"
+                asp-fallback-test="window.jQuery"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            asp-fallback-src="lib/bootstrap-3.3.7/dist/js/bootstrap.js"></script>    
+        <script src="~/dist/dutchtreat.min.js" asp-append-version="true"></script>
+    </environment>
     @RenderSection("scripts", false)
 
 </body>

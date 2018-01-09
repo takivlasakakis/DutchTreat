@@ -2,6 +2,7 @@
   "Colors":  {
     "Favorite": "blue"
   },
+  "DisableSSL":  false,
   "ConnectionStrings":  {
     "DutchConnectionString": "server=(local);Database=DutchTreatDb;User Id=sa;Password=Teeb15mc;MultipleActiveResultSets=true;"
   },
