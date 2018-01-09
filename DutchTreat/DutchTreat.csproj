@@ -22,6 +22,9 @@
     <Folder Include="Views\Account\" />
     <Folder Include="wwwroot\ts\" />
     <Folder Include="ClientApp\app\shop\" />
+    <Folder Include="ClientApp\app\shared\" />
+    <Folder Include="ClientApp\app\checkout\" />
+    <Folder Include="ClientApp\app\login\" />
   </ItemGroup>
 
   <ItemGroup>
